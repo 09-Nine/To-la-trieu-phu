@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.drawerlayout.widget.DrawerLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/gameplay_drawer"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/atp__activity_player_background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/gameplay_container">
+
+        <View
+            android:id="@+id/view_bar"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/gameplay_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/player_img"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_no_image"
+            app:layout_constraintBottom_toBottomOf="@+id/view_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/gameplay_timer"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="@+id/view_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/timer_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/gameplay_timer"
+            app:layout_constraintEnd_toEndOf="@+id/gameplay_timer"
+            app:layout_constraintStart_toStartOf="@+id/gameplay_timer"
+            app:layout_constraintTop_toTopOf="@+id/gameplay_timer" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appCompatImageView3"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="35dp"
+            android:src="@drawable/atp__activity_profile_icon_money"
+            app:layout_constraintBottom_toBottomOf="@+id/view_bar"
+            app:layout_constraintStart_toEndOf="@+id/gameplay_timer"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/player_current_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="150,000,000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/view_bar"
+            app:layout_constraintStart_toEndOf="@+id/appCompatImageView3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TableRow
+            android:id="@+id/tableRow"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_bar">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_stop"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/atp__activity_player_button_image_help_stop" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_change"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/atp__activity_player_button_image_help_change_question" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_5050"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/atp__activity_player_button_image_help_5050" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_audience"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/atp__activity_player_button_image_help_audience" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_call"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/atp__activity_player_button_image_help_call" />
+        </TableRow>
+
+        <TextView
+            android:id="@+id/question_content"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@drawable/atp__activity_player_layout_play_question_background"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="@string/help_audience"
+            android:textColor="@color/ques_color"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableRow" />
+
+        <TextView
+            android:id="@+id/ques_level"
+            android:layout_width="240dp"
+            android:layout_height="40dp"
+            android:background="@drawable/atp__activity_player_layout_play_order_question"
+            android:text="Câu 1"
+            android:gravity="center"
+            android:textColor="@color/ques_num"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableRow" />
+
+        <TextView
+            android:id="@+id/answer_a"
+            android:layout_marginTop="20dp"
+            android:layout_width="360dp"
+            android:layout_height="70dp"
+            android:text="A: Okeeeeee"
+            android:paddingStart="65dp"
+            android:paddingEnd="65dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:background="@drawable/atp__activity_player_layout_play_answer_background_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/question_content" />
+
+        <TextView
+            android:id="@+id/answer_b"
+            android:layout_width="360dp"
+            android:layout_height="70dp"
+            android:text="B: Okeeeeee"
+            android:paddingStart="65dp"
+            android:paddingEnd="65dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:background="@drawable/atp__activity_player_layout_play_answer_background_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/answer_a"/>
+
+        <TextView
+            android:id="@+id/answer_c"
+            android:layout_width="360dp"
+            android:layout_height="70dp"
+            android:text="C: Okeeeeee"
+            android:paddingStart="65dp"
+            android:paddingEnd="65dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:background="@drawable/atp__activity_player_layout_play_answer_background_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/answer_b"/>
+
+        <TextView
+            android:id="@+id/answer_d"
+            android:layout_width="360dp"
+            android:layout_height="70dp"
+            android:text="D: Okeeeee dddddddddddddddddddddddddddddddddd"
+            android:paddingStart="65dp"
+            android:paddingEnd="65dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:background="@drawable/atp__activity_player_layout_play_answer_background_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/answer_c"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/player_money_container"
+        android:layout_gravity="start">
+        <include layout="@layout/player_money" />
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>
+</layout>

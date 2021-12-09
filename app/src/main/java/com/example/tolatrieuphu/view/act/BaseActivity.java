@@ -12,7 +12,6 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.tolatrieuphu.interfaces.OnActionCallBack;
-import com.example.tolatrieuphu.R;
 
 public abstract class BaseActivity<BD extends ViewDataBinding,VM extends ViewModel> extends AppCompatActivity
         implements OnActionCallBack {
@@ -40,7 +39,7 @@ public abstract class BaseActivity<BD extends ViewDataBinding,VM extends ViewMod
         if (anim_end != 0 && anim_start != 0) {
             transaction.setCustomAnimations(anim_start, anim_end);
         }
-        transaction.replace(R.id.container_view, fragment);
+        transaction.replace(layoutID, fragment);
         if (addToBackStack) {
             transaction.addToBackStack("add");
         }

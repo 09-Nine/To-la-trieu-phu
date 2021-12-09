@@ -15,10 +15,10 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.tolatrieuphu.interfaces.OnActionCallBack;
+import com.example.tolatrieuphu.manager.MediaManager;
 
 public abstract class BaseFragment<K extends ViewDataBinding, V extends ViewModel> extends Fragment {
     protected Context mContext;
-    protected View mRootView;
     protected OnActionCallBack callBack;
 
     public void setCallBack(OnActionCallBack callBack) {
@@ -27,18 +27,6 @@ public abstract class BaseFragment<K extends ViewDataBinding, V extends ViewMode
 
     protected V mViewModel;
     protected K binding;
-
-    public final <T extends View> T findViewById(int id) {
-        return findViewById(id, null);
-    }
-
-    public final <T extends View> T findViewById(int id, View.OnClickListener event) {
-        T v = mRootView.findViewById(id);
-        if (v != null && event != null) {
-            v.setOnClickListener(event);
-        }
-        return v;
-    }
 
     @Override
     public final void onAttach(@NonNull Context context) {
@@ -52,7 +40,7 @@ public abstract class BaseFragment<K extends ViewDataBinding, V extends ViewMode
                                    @Nullable ViewGroup container,
                                    @Nullable Bundle savedInstanceState) {
 
-        mViewModel = new ViewModelProvider(this).get(getViewModelClass());
+        mViewModel = new ViewModelProvider(requireActivity()).get(getViewModelClass());
         binding = DataBindingUtil.inflate(inflater,getLayoutId(),container,false);
         initViews();
         return binding.getRoot();

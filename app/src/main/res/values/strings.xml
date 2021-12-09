@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">To la Trieu Phu</string>
+    <string name="rule_title">LUẬT CHƠI</string>
+    <string name="rule">Người chơi phải trả lời 15 câu hỏi với cấp độ từ dễ đến khó, thời gian trả lời là 30 giây. Mỗi câu hỏi đều được gắn với một mức tiền thưởng quy định. Người chơi trả lời đến câu hỏi nào thì chắc chắn có được số điểm thưởng tương ứng của câu hỏi đó</string>
+    <string name="helps">TRỢ GIÚP</string>
+    <string name="help_5050">Máy tính bỏ đi 2 phương án sai để người chơi chọn một trong 2 phương án còn lại</string>
+    <string name="help_call">Người chơi liên lạc tới một trong số những người nổi tiếng và hỏi ý kiến của họ</string>
+    <string name="help_audience">Người chơi sẽ nhận được kết quả trợ giúp dưới dạng biểu đồ phần trăm số khán giả lựa chọn từng phương án</string>
+    <string name="help_change_question">Người chơi sẽ được đổi câu hỏi với cùng độ khó</string>
+    <string name="cancel">ĐÓNG</string>
+    <string name="hide">Hide</string>
+    <string name="your_score">Your Score:</string>
+    <string name="agree">Đồng ý</string>
 </resources>

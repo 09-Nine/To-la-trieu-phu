@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/atp__activity_home_background"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/spinning_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/atp__bg_circle_anim"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/home_game_icon"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="145dp"
+        android:src="@drawable/atp__icon_logo_in_app"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btn_play"
+        android:layout_width="280dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="180dp"
+        android:src="@drawable/atp__button_trial_normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_game_icon" />
+
+    <LinearLayout
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_play">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/home_info"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/atp__activity_home_button_about" />
+
+        <Space
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/atp__activity_home_button_archivement" />
+
+        <Space
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/atp__activity_home_button_setting" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/atp__activity_player_layout_help_call_audience_background">
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rule_title"
+        android:textColor="@color/dialog_title"
+        android:textStyle="bold"
+        android:textSize="25sp"/>
+    <TextView
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rule"
+        android:textColor="@color/white"
+        android:textSize="13sp"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/helps"
+        android:textColor="@color/dialog_title"
+        android:textSize="25sp"/>
+
+   <TextView
+       style="@style/dialog_info_item"
+       app:drawableStartCompat="@drawable/atp__activity_player_button_image_help_5050"
+       android:text="@string/help_5050"
+      />
+    <TextView
+        style="@style/dialog_info_item"
+        app:drawableStartCompat="@drawable/atp__activity_player_button_image_help_call"
+        android:text="@string/help_call"
+       />
+    <TextView
+        style="@style/dialog_info_item"
+        app:drawableStartCompat="@drawable/atp__activity_player_button_image_help_audience"
+        android:text="@string/help_audience"
+       />
+    <TextView
+        style="@style/dialog_info_item"
+        app:drawableStartCompat="@drawable/atp__activity_player_button_image_help_change_question"
+        android:text="@string/help_change_question"
+       />
+    <Button
+        android:id="@+id/info_dialog_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:textSize="15sp"
+       />
+
+</LinearLayout>
