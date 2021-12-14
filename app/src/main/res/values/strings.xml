@@ -11,4 +11,9 @@
     <string name="hide">Hide</string>
     <string name="your_score">Your Score:</string>
     <string name="agree">Đồng ý</string>
+    <string name="doctor">Bác sĩ</string>
+    <string name="professor">Giáo sư</string>
+    <string name="engineer">Kĩ sư</string>
+    <string name="reporter">Phóng viên</string>
+    <string name="close">Đóng</string>
 </resources>

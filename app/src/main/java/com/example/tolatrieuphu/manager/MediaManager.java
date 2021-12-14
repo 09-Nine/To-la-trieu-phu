@@ -12,6 +12,7 @@ public class MediaManager implements MediaPlayer.OnCompletionListener{
     private Context mContext;
     private MediaPlayer bgMedia;
     private MediaPlayer mediaPlayer;
+    private boolean mute = false;
 
     public static final int HOME_BG_MUSIC = R.raw.bgmusic;
     public static final int[] ANS_A = {R.raw.ans_a, R.raw.ans_a2};
@@ -37,7 +38,8 @@ public class MediaManager implements MediaPlayer.OnCompletionListener{
     public static final int[] CONGRATULATION_1 = {R.raw.chuc_mung_vuot_moc_01_0, R.raw.chuc_mung_vuot_moc_01_1};
     public static final int[] CONGRATULATION_2 = {R.raw.chuc_mung_vuot_moc_02_0};
     public static final int[] GO_FIND = {R.raw.gofind, R.raw.gofind_b};
-    public static final int[] HELP_CALL = {R.raw.help_call, R.raw.help_callb};
+    public static final int[] HELP_CALL_FIRST = {R.raw.help_call};
+    public static final int[] HELP_CALL_SECOND = {R.raw.help_callb};
     public static final int[] HELP_AUDIENCE = {R.raw.khan_gia};
     public static final int[] HELP_AUDIENCE_WAIT = {R.raw.hoi_y_kien_chuyen_gia_01b};
     public static final int[] HELP_5050 = {R.raw.sound5050, R.raw.sound5050_2};
@@ -61,7 +63,6 @@ public class MediaManager implements MediaPlayer.OnCompletionListener{
     public static final int[] QUEST_14 = {R.raw.ques14};
     public static final int[] QUEST_15 = {R.raw.ques15};
     public static final int[] READY_SOUND = {R.raw.ready, R.raw.ready_b, R.raw.ready_c};
-    public static final int[] TOUCH_SOUND = {R.raw.touch_sound};
 
 
     public MediaManager(Context Context) {
@@ -69,14 +70,24 @@ public class MediaManager implements MediaPlayer.OnCompletionListener{
     }
 
     public void playBgMusic(int soundId) {
+        if (bgMedia != null) {
+            stopBgMusic();
+        }
         bgMedia = MediaPlayer.create(mContext, soundId);
+        if (mute) {
+            bgMedia.setVolume(0, 0);
+        } else {
+            bgMedia.setVolume(1, 1);
+        }
         bgMedia.setLooping(true);
         bgMedia.start();
     }
 
     public void stopBgMusic() {
-        bgMedia.release();
-        bgMedia = null;
+        if (bgMedia != null) {
+            bgMedia.release();
+            bgMedia = null;
+        }
     }
 
 
@@ -85,6 +96,12 @@ public class MediaManager implements MediaPlayer.OnCompletionListener{
             resetMedia();
         }
         mediaPlayer = MediaPlayer.create(mContext, soundId[new Random().nextInt(soundId.length)]);
+        if (mute) {
+            mediaPlayer.setVolume(0, 0);
+        } else {
+            mediaPlayer.setVolume(1, 1);
+        }
+
         if (completionListener == null) {
             mediaPlayer.setOnCompletionListener(this);
         }
@@ -97,12 +114,32 @@ public class MediaManager implements MediaPlayer.OnCompletionListener{
         mediaPlayer = null;
     }
 
-    public boolean isMediaPlaying() {
-        return mediaPlayer != null;
+    public void pauseMedia() {
+        if (mediaPlayer != null) {
+            mediaPlayer.pause();
+        }
     }
 
-    public int[] getQuestionSound(Question question) {
-        switch (question.getLevel()) {
+    public void resumeMedia() {
+        if (mediaPlayer != null) {
+            mediaPlayer.start();
+        }
+    }
+
+    public void pauseBg() {
+        if (bgMedia != null) {
+            bgMedia.pause();
+        }
+    }
+
+    public void resumeBg() {
+        if (bgMedia != null) {
+            bgMedia.start();
+        }
+    }
+
+    public int[] getQuestionSound(int level) {
+        switch (level) {
             case 1: return QUEST_1;
             case 2: return QUEST_2;
             case 3: return QUEST_3;
@@ -125,5 +162,18 @@ public class MediaManager implements MediaPlayer.OnCompletionListener{
     @Override
     public void onCompletion(MediaPlayer mp) {
         resetMedia();
+    }
+
+    public boolean isMute() {
+        return mute;
+    }
+
+    public void setMute(boolean mute) {
+        if (mute) {
+            bgMedia.setVolume(0, 0);
+        } else {
+            bgMedia.setVolume(1, 1);
+        }
+        this.mute = mute;
     }
 }

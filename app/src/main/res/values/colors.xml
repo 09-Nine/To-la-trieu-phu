@@ -10,4 +10,10 @@
     <color name="dialog_bg">#2D313D</color>
     <color name="game_over_dialog">#2a9d8f</color>
     <color name="money_get">#d00000</color>
+    <color name="black">#000000</color>
+    <color name="bar_color">#76c893</color>
+    <color name="rank1_bg">#f72585</color>
+    <color name="rank2_bg">#06d6a0</color>
+    <color name="rank3_bg">#118ab2</color>
+    <color name="score">#d90429</color>
 </resources>

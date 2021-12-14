@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:orientation="vertical"
+        android:background="@drawable/atp__activity_player_layout_help_call_audience_background">
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_margin="20dp"
+            android:id="@+id/audience_chart_bar"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:visibility="gone"
+            android:id="@+id/audience_close_btn"
+            android:layout_gravity="center"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:text="@string/close"
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:background="@drawable/atp__dialog_confirm_background_button"/>
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/atp__activity_player_layout_help_call_title_background"
+        android:gravity="center"
+        android:text="Ý kiến khán giả"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+</FrameLayout>

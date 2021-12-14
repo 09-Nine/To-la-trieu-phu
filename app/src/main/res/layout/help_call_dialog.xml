@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <GridLayout
+        android:id="@+id/grid_layout"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:background="@drawable/atp__activity_player_layout_help_call_audience_background"
+        android:columnCount="2"
+        android:rowCount="2">
+
+        <LinearLayout
+            android:id="@+id/call_doctor"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/atp__activity_player_layout_help_call_01" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/doctor"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/call_professor"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/atp__activity_player_layout_help_call_02" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/professor"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/call_engineer"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/atp__activity_player_layout_help_call_03" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/engineer"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/call_reporter"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/atp__activity_player_layout_help_call_04" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reporter"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/chosen_call"
+            android:visibility="gone"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/chosen_call_answer"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/ques_color"
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/call_close_btn"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:text="@string/close"
+                android:textSize="13sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="@drawable/atp__dialog_confirm_background_button"/>
+
+        </LinearLayout>
+
+
+    </GridLayout>
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/atp__activity_player_layout_help_call_title_background"
+        android:gravity="center"
+        android:text="Ý kiến chuyên gia"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+</FrameLayout>

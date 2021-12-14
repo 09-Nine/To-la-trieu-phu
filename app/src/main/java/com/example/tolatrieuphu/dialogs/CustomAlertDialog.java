@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.example.tolatrieuphu.R;
 
 public class CustomAlertDialog {
-    private static AlertDialog dialog;
+    private final AlertDialog dialog;
 
     public CustomAlertDialog(Activity activity, String dialogContent,
                              View.OnClickListener okeListener, View.OnClickListener cancelListener) {
@@ -18,6 +18,7 @@ public class CustomAlertDialog {
         View v = inflater.inflate(R.layout.my_dialog, null);
         builder.setView(v);
         dialog = builder.create();
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         TextView content = v.findViewById(R.id.dialog_content);
         content.setText(dialogContent);
         if (cancelListener == null) {

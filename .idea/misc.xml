@@ -3,12 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/9999/Desktop/AndroidStudioProjects/TolaTrieuPhu/app/src/main/res/drawable/dialog_shape.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/9999/Desktop/AndroidStudioProjects/TolaTrieuPhu/app/src/main/res/drawable/ic_baseline_assignment_return_24.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/9999/Desktop/AndroidStudioProjects/TolaTrieuPhu/app/src/main/res/drawable/ic_launcher_background.xml" value="0.221025641025641" />
         <entry key="..\:/Users/9999/Desktop/AndroidStudioProjects/TolaTrieuPhu/app/src/main/res/drawable/player_money_button.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/9999/Desktop/AndroidStudioProjects/TolaTrieuPhu/app/src/main/res/layout/activity_main.xml" value="0.20512820512820512" />
         <entry key="..\:/Users/9999/Desktop/AndroidStudioProjects/TolaTrieuPhu/app/src/main/res/layout/exit_dialog.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/9999/Desktop/AndroidStudioProjects/TolaTrieuPhu/app/src/main/res/layout/game_over_dialog.xml" value="0.22" />
         <entry key="..\:/Users/9999/Desktop/AndroidStudioProjects/TolaTrieuPhu/app/src/main/res/layout/gameplay_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/9999/Desktop/AndroidStudioProjects/TolaTrieuPhu/app/src/main/res/layout/help_audience_dialog.xml" value="0.25" />
+        <entry key="..\:/Users/9999/Desktop/AndroidStudioProjects/TolaTrieuPhu/app/src/main/res/layout/help_call_dialog.xml" value="0.25" />
         <entry key="..\:/Users/9999/Desktop/AndroidStudioProjects/TolaTrieuPhu/app/src/main/res/layout/high_score_fragment.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/9999/Desktop/AndroidStudioProjects/TolaTrieuPhu/app/src/main/res/layout/high_score_item.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/9999/Desktop/AndroidStudioProjects/TolaTrieuPhu/app/src/main/res/layout/home_fragment.xml" value="0.22" />

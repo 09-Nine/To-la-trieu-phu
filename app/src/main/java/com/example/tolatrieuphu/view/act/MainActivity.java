@@ -1,7 +1,6 @@
 package com.example.tolatrieuphu.view.act;
 
-import android.util.Log;
-import android.widget.Toast;
+
 
 import androidx.fragment.app.Fragment;
 
@@ -10,6 +9,7 @@ import com.example.tolatrieuphu.Constants;
 import com.example.tolatrieuphu.R;
 import com.example.tolatrieuphu.databinding.ActivityMainBinding;
 import com.example.tolatrieuphu.view.fragment.GameplayFragment;
+import com.example.tolatrieuphu.view.fragment.HighScoreFragment;
 import com.example.tolatrieuphu.view.fragment.HomeFragment;
 import com.example.tolatrieuphu.view.fragment.SplashFragment;
 import com.example.tolatrieuphu.view.viewmodel.MainViewModel;
@@ -46,6 +46,11 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
                 GameplayFragment gameplayFragment = new GameplayFragment();
                 gameplayFragment.setCallBack(this);
                 showFragment(R.id.container_view, gameplayFragment, false, 0, 0);
+                break;
+            case Constants.KEY_SHOW_HIGH_SCORE:
+                HighScoreFragment highScoreFragment = new HighScoreFragment();
+                highScoreFragment.setCallBack(this);
+                showFragment(R.id.container_view, highScoreFragment, false, 0, 0);
                 break;
         }
     }

@@ -3,12 +3,14 @@ package com.example.tolatrieuphu;
 import android.app.Application;
 
 import com.example.tolatrieuphu.manager.DatabaseManager;
+import com.example.tolatrieuphu.manager.LocalDataManager;
 import com.example.tolatrieuphu.manager.MediaManager;
 
 public class App extends Application {
     private static App instance;
     private MediaManager mediaManager;
     private DatabaseManager databaseManager;
+    private LocalDataManager localDataManager;
 
     @Override
     public void onCreate() {
@@ -16,6 +18,7 @@ public class App extends Application {
         instance = this;
         mediaManager = new MediaManager(this);
         databaseManager = new DatabaseManager(this);
+        localDataManager = new LocalDataManager(this);
     }
 
     public MediaManager getMediaManager() {
@@ -24,6 +27,10 @@ public class App extends Application {
 
     public DatabaseManager getDatabaseManager() {
         return databaseManager;
+    }
+
+    public LocalDataManager getLocalDataManager() {
+        return localDataManager;
     }
 
     public static App getInstance() {

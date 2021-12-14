@@ -15,7 +15,6 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.tolatrieuphu.interfaces.OnActionCallBack;
-import com.example.tolatrieuphu.manager.MediaManager;
 
 public abstract class BaseFragment<K extends ViewDataBinding, V extends ViewModel> extends Fragment {
     protected Context mContext;
@@ -34,7 +33,6 @@ public abstract class BaseFragment<K extends ViewDataBinding, V extends ViewMode
         mContext = context;
     }
 
-    @Nullable
     @Override
     public final View onCreateView(@NonNull LayoutInflater inflater,
                                    @Nullable ViewGroup container,

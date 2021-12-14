@@ -1,7 +1,6 @@
 package com.example.tolatrieuphu.view.fragment;
 
 import android.os.Handler;
-import android.view.View;
 
 import com.example.tolatrieuphu.Constants;
 import com.example.tolatrieuphu.R;

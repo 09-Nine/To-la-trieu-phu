@@ -1,6 +1,5 @@
 package com.example.tolatrieuphu.adapters;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.tolatrieuphu.R;
 
 public class MoneyAdapter extends RecyclerView.Adapter<MoneyAdapter.ViewHolder> {
-    private String[] moneyArray;
+    private final String[] moneyArray;
     private int currentMoney;
 
     public MoneyAdapter(String[] moneyArray) {
@@ -50,7 +49,7 @@ public class MoneyAdapter extends RecyclerView.Adapter<MoneyAdapter.ViewHolder> 
         return moneyArray.length;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView moneyItemContainer;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
