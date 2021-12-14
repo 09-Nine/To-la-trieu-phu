@@ -3,12 +3,15 @@ package com.example.tolatrieuphu.view.fragment;
 
 import android.content.DialogInterface;
 import android.media.MediaPlayer;
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.lifecycle.Observer;
@@ -44,6 +47,7 @@ public class GameplayFragment extends BaseFragment<GameplayFragmentBinding, Game
     private GameOverDialog gameOverDialog;
     private DrawerLayout.DrawerListener readyListener;
     private boolean isPlaying;
+    private boolean ready = false;
     private Handler handler;
     private CountDownTimer countDownTimer = null;
     private String money;
@@ -308,6 +312,7 @@ public class GameplayFragment extends BaseFragment<GameplayFragmentBinding, Game
 
     private void handleHelpCall() {
         cancelTimer();
+        isPlaying = false;
         helpCallDialog = new HelpCallDialog(requireActivity());
         binding.btnCall.setBackgroundResource(R.drawable.atp__activity_player_button_image_help_call_x);
         binding.btnCall.setClickable(false);
@@ -320,6 +325,7 @@ public class GameplayFragment extends BaseFragment<GameplayFragmentBinding, Game
                     @Override
                     public void onDismiss(DialogInterface dialog) {
                         resumeTimer();
+                        isPlaying = true;
                     }
                 });
                 mediaManager.playSound(MediaManager.HELP_CALL_SECOND, null);
@@ -338,6 +344,7 @@ public class GameplayFragment extends BaseFragment<GameplayFragmentBinding, Game
 
     private void handleHelpAudience(){
         cancelTimer();
+        isPlaying = false;
         helpAudienceDialog = new HelpAudienceDialog(requireActivity());
         binding.btnAudience.setBackgroundResource(R.drawable.atp__activity_player_button_image_help_audience_x);
         binding.btnAudience.setClickable(false);
@@ -350,6 +357,7 @@ public class GameplayFragment extends BaseFragment<GameplayFragmentBinding, Game
                     @Override
                     public void onDismiss(DialogInterface dialog) {
                         resumeTimer();
+                        isPlaying = true;
                     }
                 });
                 mediaManager.playSound(MediaManager.HELP_AUDIENCE_WAIT, null);
@@ -426,6 +434,30 @@ public class GameplayFragment extends BaseFragment<GameplayFragmentBinding, Game
             }
         });
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        ready = true;
+        mediaManager.pauseMedia();
+        mediaManager.pauseBg();
+        cancelTimer();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.e("out", "onResume: ");
+        if (ready) {
+            Log.e("in", "onResume: ");
+            mediaManager.resumeMedia();
+            mediaManager.resumeBg();
+        }
+        if (ready && isPlaying) {
+            resumeTimer();
+        }
+    }
+
 
     private void gotoHome() {
         mediaManager.resetMedia();
