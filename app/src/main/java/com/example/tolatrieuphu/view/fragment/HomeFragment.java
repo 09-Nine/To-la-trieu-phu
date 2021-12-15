@@ -60,6 +60,18 @@ public class HomeFragment extends BaseFragment<HomeFragmentBinding, HomeViewMode
         }
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        mediaManager.pauseBg();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mediaManager.resumeBg();
+    }
+
     private void gotoGameplay() {
         App.getInstance().getMediaManager().stopBgMusic();
         callBack.callBack(Constants.KEY_SHOW_GAMEPLAY, null);
